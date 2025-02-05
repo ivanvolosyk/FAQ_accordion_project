@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(275, 100%, 97%);
+  font-family: "Work Sans";
+  color: hsl(292, 42%, 14%);
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
