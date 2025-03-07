@@ -1,16 +1,17 @@
-const btns = document.querySelectorAll(".btn"); // вибір всіх елементів з класом "btn"
+const faqItems = document.querySelectorAll(".faq-item");
 
-btns.forEach(function (btn) {
-  // для кожної кнопки
-  btn.addEventListener("click", function () {
-    const answerContainer = btn
-      .closest(".faq-item")
-      .querySelector(".answer-conteiner");
-    // додаємо або видаляємо клас "active"
+faqItems.forEach(function (faqItem) {
+  const question = faqItem.querySelector(".question");
+  const btn = faqItem.querySelector(".btn");
+  const answerContainer = faqItem.querySelector(".answer-container");
+
+  const toggleAnswer = () => {
     answerContainer.classList.toggle("active");
+    btn.src = answerContainer.classList.contains("active")
+      ? "./assets/images/icon-minus.svg"
+      : "./assets/images/icon-plus.svg";
+  };
 
-    // Toggle клас кнопки між 'plus' та 'minus'
-    btn.classList.toggle("plus");
-    btn.classList.toggle("minus");
-  });
+  question.addEventListener("click", toggleAnswer);
+  btn.addEventListener("click", toggleAnswer);
 });
